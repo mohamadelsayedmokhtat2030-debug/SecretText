@@ -6,75 +6,138 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0b1020">
   <meta name="description" content="SecretText - شفّر رسائلك الخاصة وفك تشفيرها بأمان من متصفحك.">
+
   <title>SecretText | رسائلك في أمان</title>
-  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
   <header class="topbar">
     <a class="brand" href="./">
       <span class="brand-icon">🔐</span>
       <span>Secret<span class="accent">Text</span></span>
     </a>
-    <span class="secure-label"><span class="dot"></span> التشفير على جهازك</span>
+
+    <span class="secure-label">
+      <span class="dot"></span>
+      التشفير على جهازك
+    </span>
   </header>
 
   <main class="container">
+
     <section class="hero">
       <div class="eyebrow">خصوصيتك أولًا</div>
-      <h1>رسالتك سرّك،<br><span class="gradient-text">وكلمة السر مفتاحها.</span></h1>
-      <p>شفّر رسالتك وابعث النص المشفّر لصاحبك. لن يستطيع قراءتها من دون كلمة المرور الصحيحة.</p>
+
+      <h1>
+        رسالتك سرّك،
+        <br>
+        <span class="gradient-text">وكلمة السر مفتاحها.</span>
+      </h1>
+
+      <p>
+        شفّر رسالتك وابعث النص المشفّر لصاحبك.
+        لن يستطيع قراءتها من دون كلمة المرور الصحيحة.
+      </p>
     </section>
 
     <div class="notice">
       <span>🛡️</span>
-      <p>تتم معالجة الرسائل داخل المتصفح. لا تضع معلومات شديدة الحساسية، ولا تشارك كلمة المرور مع الرسالة نفسها.</p>
+      <p>
+        تتم معالجة الرسائل داخل المتصفح.
+        لا تضع معلومات شديدة الحساسية، ولا تشارك كلمة المرور مع الرسالة نفسها.
+      </p>
     </div>
 
+    <!-- قسم التشفير -->
     <section class="panel">
       <div class="panel-heading">
         <div>
           <span class="section-kicker">01 / MESSAGE</span>
           <h2>رسالتك السرية</h2>
         </div>
+
         <span class="round-icon">✉</span>
       </div>
 
       <label for="message">اكتب الرسالة التي تريد إخفاءها</label>
-      <textarea id="message" rows="5" placeholder="اكتب رسالتك هنا..."></textarea>
+
+      <textarea
+        id="message"
+        rows="5"
+        placeholder="اكتب رسالتك هنا..."
+      ></textarea>
 
       <div class="field-row">
         <label for="password">كلمة المرور المشتركة</label>
-        <button class="text-button" id="togglePassword" type="button">إظهار</button>
+
+        <button
+          class="text-button"
+          id="togglePassword"
+          type="button"
+        >
+          إظهار
+        </button>
       </div>
-      <input id="password" type="password" autocomplete="new-password"
-        placeholder="استخدم كلمة مرور قوية">
 
-      <p class="hint">استخدم كلمة مرور طويلة، وشاركها مع المستلم بطريقة منفصلة عن الرسالة.</p>
+      <input
+        id="password"
+        type="password"
+        autocomplete="new-password"
+        placeholder="استخدم كلمة مرور قوية"
+      >
 
-      <button id="encryptBtn" class="primary-button" type="button">
-        <span>🔒</span> تشفير الرسالة
+      <p class="hint">
+        استخدم كلمة مرور طويلة، وشاركها مع المستلم بطريقة منفصلة عن الرسالة.
+      </p>
+
+      <button
+        id="encryptBtn"
+        class="primary-button"
+        type="button"
+      >
+        <span>🔒</span>
+        تشفير الرسالة
       </button>
 
-      <div id="encryptStatus" class="status" role="status" aria-live="polite"></div>
+      <div
+        id="encryptStatus"
+        class="status"
+        role="status"
+        aria-live="polite"
+      ></div>
 
       <div class="result-heading">
         <label for="encryptedOutput">النص المشفّر</label>
         <span class="mini-badge">ENCRYPTED</span>
       </div>
-      <textarea id="encryptedOutput" rows="5" readonly
-        placeholder="سيظهر النص المشفّر هنا..."></textarea>
 
-      <button id="copyBtn" class="secondary-button" type="button">
-        <span>📋</span> نسخ النص المشفّر
+      <textarea
+        id="encryptedOutput"
+        rows="5"
+        readonly
+        placeholder="سيظهر النص المشفّر هنا..."
+      ></textarea>
+
+      <button
+        id="copyBtn"
+        class="secondary-button"
+        type="button"
+      >
+        <span>📋</span>
+        نسخ النص المشفّر
       </button>
     </section>
 
+    <!-- قسم فك التشفير -->
     <section class="panel">
       <div class="panel-heading">
         <div>
           <span class="section-kicker">02 / DECRYPT</span>
           <h2>استقبل رسالة مشفّرة</h2>
         </div>
+
         <span class="round-icon">🔓</span>
       </div>
 
@@ -83,69 +146,120 @@
       </p>
 
       <label for="encryptedInput">النص المشفّر المستلم</label>
-      <textarea id="encryptedInput" rows="5"
-        placeholder="الصق النص الذي يبدأ بـ ST1. هنا..."></textarea>
+
+      <textarea
+        id="encryptedInput"
+        rows="5"
+        placeholder="الصق النص الذي يبدأ بـ ST1. هنا..."
+      ></textarea>
 
       <label for="decryptPassword">كلمة المرور</label>
-      <input id="decryptPassword" type="password" autocomplete="off"
-        placeholder="اكتب كلمة المرور">
 
-      <button id="decryptBtn" class="primary-button" type="button">
-        <span>🔓</span> فك تشفير الرسالة
+      <input
+        id="decryptPassword"
+        type="password"
+        autocomplete="off"
+        placeholder="اكتب كلمة المرور"
+      >
+
+      <button
+        id="decryptBtn"
+        class="primary-button"
+        type="button"
+      >
+        <span>🔓</span>
+        فك تشفير الرسالة
       </button>
 
-      <div id="decryptStatus" class="status" role="status" aria-live="polite"></div>
+      <div
+        id="decryptStatus"
+        class="status"
+        role="status"
+        aria-live="polite"
+      ></div>
 
       <div class="result-heading">
         <label for="decryptedOutput">الرسالة الأصلية</label>
         <span class="mini-badge">PRIVATE</span>
       </div>
-      <textarea id="decryptedOutput" rows="5" readonly
-        placeholder="ستظهر الرسالة بعد فك التشفير..."></textarea>
 
-      <button id="copyPlainBtn" class="secondary-button" type="button">
-        <span>📋</span> نسخ الرسالة الأصلية
+      <textarea
+        id="decryptedOutput"
+        rows="5"
+        readonly
+        placeholder="ستظهر الرسالة بعد فك التشفير..."
+      ></textarea>
+
+      <button
+        id="copyPlainBtn"
+        class="secondary-button"
+        type="button"
+      >
+        <span>📋</span>
+        نسخ الرسالة الأصلية
       </button>
     </section>
 
+    <!-- طريقة الاستخدام -->
     <section class="steps">
       <h2>كيف تستخدم SecretText؟</h2>
+
       <div class="step">
         <span class="step-number">1</span>
-        <div><strong>اكتب الرسالة</strong><p>أدخل رسالتك وكلمة المرور المتفق عليها.</p></div>
+        <div>
+          <strong>اكتب الرسالة</strong>
+          <p>أدخل رسالتك وكلمة المرور المتفق عليها.</p>
+        </div>
       </div>
+
       <div class="step">
         <span class="step-number">2</span>
-        <div><strong>أرسل النص المشفّر</strong><p>انسخ الناتج وأرسله عبر وسيلة التواصل المناسبة.</p></div>
+        <div>
+          <strong>أرسل النص المشفّر</strong>
+          <p>انسخ الناتج وأرسله عبر وسيلة التواصل المناسبة.</p>
+        </div>
       </div>
+
       <div class="step">
         <span class="step-number">3</span>
-        <div><strong>افتح الرسالة</strong><p>يضع المستلم النص المشفّر وكلمة المرور في قسم فك التشفير.</p></div>
+        <div>
+          <strong>افتح الرسالة</strong>
+          <p>يضع المستلم النص المشفّر وكلمة المرور في قسم فك التشفير.</p>
+        </div>
       </div>
     </section>
+
   </main>
 
+  <!-- تذييل الموقع -->
+  <footer class="footer">
+    <div class="brand footer-brand">
+      🔐 Secret<span class="accent">Text</span>
+    </div>
 
-<footer class="footer">
-  <div class="brand footer-brand">
-    🔐 Secret<span class="accent">Text</span>
-  </div>
+    <p>
+      خصوصيتك مسؤوليتنا — التشفير يتم محليًا في متصفحك.
+    </p>
 
-  <p>خصوصيتك مسؤوليتنا — التشفير يتم محليًا في متصفحك.</p>
+    <a
+      class="studio-link"
+      href="https://webstudio2026.vercel.app/#"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="زيارة موقع Web Studio"
+    >
+      <span class="studio-icon">✦</span>
+      تصميم وتطوير بواسطة
+      <strong>Web Studio</strong>
+      <span class="external-icon">↗</span>
+    </a>
 
-  <a
-    class="studio-link"
-    href="https://webstudio2026.vercel.app/#"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="زيارة موقع Web Studio"
-  >
-    <span class="studio-icon">✦</span>
-    تصميم وتطوير بواسطة
-    <strong>Web Studio</strong>
-    <span class="external-icon">↗</span>
-  </a>
+    <p class="footer-small">
+      © 2026 SecretText — جميع الحقوق محفوظة
+    </p>
+  </footer>
 
-  <p class="footer-small">© 2026 SecretText — جميع الحقوق محفوظة</p>
-</footer>
-
+  <!-- تحميل JavaScript بعد تجهيز الصفحة -->
+  <script src="./app.js" defer></script>
+</body>
+</html>
